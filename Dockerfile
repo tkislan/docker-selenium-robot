@@ -33,5 +33,5 @@ RUN apt-get update && \
   mv "/tmp/chromedriver" "/usr/bin/" && \
   rm "/tmp/chromedriver.zip" && \
   apt-get clean && \
-  rm -r "tmp/"*
+  rm -rf "/tmp/"*
 
