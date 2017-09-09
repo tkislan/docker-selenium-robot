@@ -13,8 +13,7 @@ RUN apt-get update && \
     x11vnc \
     bash \
     curl \
-    unzip \
-    postgresql-client && \
+    unzip && \
   curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-17.05.0-ce.tgz && \
   tar xzvf docker-17.05.0-ce.tgz && \
   mv docker/docker /usr/local/bin && \
@@ -32,10 +31,5 @@ RUN apt-get update && \
     -o "/tmp/chromedriver.zip" && \
   unzip "/tmp/chromedriver.zip" -d "/tmp" && \
   mv "/tmp/chromedriver" "/usr/bin/" && \
-  rm "/tmp/chromedriver.zip" && \
-  mkdir -p $HOME/robot
+  rm "/tmp/chromedriver.zip"
 
-WORKDIR $HOME/robot
-
-ENTRYPOINT ["pybot", "-P", "lib/", "-d", "/tmp/robot"]
-CMD ["test/"]
