@@ -23,10 +23,9 @@ RUN apt-get update && \
   pip install -U \
     pip \
     robotframework==3.0.2 \
-    robotframework-selenium2library==1.8.0 \
-    selenium==2.53.6 \
     requests \
     robotframework-requests && \
+  pip install --pre robotframework-selenium2library && \
   curl -L "https://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip" \
     -o "/tmp/chromedriver.zip" && \
   unzip "/tmp/chromedriver.zip" -d "/tmp" && \
